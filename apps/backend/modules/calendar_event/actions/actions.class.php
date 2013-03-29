@@ -91,6 +91,7 @@ class calendar_eventActions extends autoCalendar_eventActions
             }
             echo json_encode($ret);
             return sfView::NONE;
+            
         }
 
     }
