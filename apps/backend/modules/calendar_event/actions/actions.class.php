@@ -86,14 +86,24 @@ class calendar_eventActions extends autoCalendar_eventActions
                                         0, //Recurring event
                                         0, //editable
                                         $event->getAddress().", ".$event->getCity(),
+                                        $event->getDescription(),
                                         ''//$attends
                                     );
             }
             echo json_encode($ret);
             return sfView::NONE;
-            
         }
 
+    }
+
+    public function executeQuickdelete(sfWebRequest $request)
+    {
+      if($request->hasParameter('calendarId')){
+        $event_calendar = Doctrine_Core::getTable('calendar_event')->find($request->getParameter('calendarId'));
+        if($event_calendar)
+          $event_calendar->delete();
+
+      }
     }
 
     public function executeQuickadd(sfWebRequest $request)
@@ -117,7 +127,7 @@ class calendar_eventActions extends autoCalendar_eventActions
             $calendar_event->setTitle($request->getParameter('CalendarTitle'));
             $calendar_event->setFromDate($start_time);
             $calendar_event->setToDate($end_time);
-            
+
             $event_type = $request->getParameter('event_type');
             if($event_type == 'null')
             {

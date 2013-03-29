@@ -34,7 +34,7 @@
                 url: DATA_FEED_URL + "?method=list",
                 quickAddUrl: "<?php echo url_for("calendar_event/quickadd") ?>",
                 quickUpdateUrl: DATA_FEED_URL + "?method=update",
-                quickDeleteUrl: DATA_FEED_URL + "?method=remove",
+                quickDeleteUrl: "<?php echo url_for("calendar_event/quickdelete") ?>",
                 readonly: false
             };
             var $dv = $("#calhead");
@@ -119,7 +119,7 @@
                 $('#event_to_date', info_div).html(data[3].toLocaleDateString() + " "+ data[3].toLocaleTimeString());
                 $('#event_title', info_div).html(data[1]);
                 $('#event_location', info_div).html(data[9]);
-                $('#event_desc', info_div).html("");
+                $('#event_desc', info_div).html(data[10]);
                 $('#event_details').dialog('open');
 
                 /*                var str = "";

@@ -1878,6 +1878,10 @@
             
             $("#bbit-cal-buddle-timeshow").html(dateshow);
             var calwhat = $("#bbit-cal-what").val("");
+            $("#bbit-cal-description").val("");
+            $("#bbit-cal-address").val("");
+            $("#bbit-cal-city").val("");
+            $("#bbit-cal-zip").val("");
             $("#bbit-cal-allday").val(isallday ? "1" : "0");
             $("#bbit-cal-start").val(dateFormat.call(start, i18n.xgcalendar.dateformat.fulldayvalue + " HH:mm"));
             $("#bbit-cal-end").val(dateFormat.call(end, i18n.xgcalendar.dateformat.fulldayvalue + " HH:mm"));
