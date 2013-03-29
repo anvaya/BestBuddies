@@ -1,0 +1,23 @@
+all:
+  datagrid:
+    date_format: "d/m/Y"
+    datetime_format: "d/m/Y à H:i:s"
+    images_dir: /sfDatagridPlugin/img/
+    class_for_foreign: sfWidgetFormDoctrineSelect  
+    jsframwork: jquery # prototype or jquery    
+    text_novalueinrows: No Records Found.
+    text_search: Search
+    text_reset: Reset
+    text_validate: Validate
+    text_page: Page
+    text_defaultview: ""
+    label_null: Date Null
+    text_numberofrecords: Number of Records
+    text_loading: Searching..
+    text_from: From
+    text_to: To
+    insert_pager_bottom: true
+    freezepanes: false
+#    csspath:
+#      base: /sfDatagridPlugin/css/datagrid.css
+#      calendar: /sfDatagridPlugin/css/calendar.css

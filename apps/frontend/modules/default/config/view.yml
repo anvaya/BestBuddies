@@ -1,0 +1,10 @@
+## YAML Template.
+indexSuccess:
+  layout: layout_home
+  stylesheets:  
+    - /js/nivo-slider/themes/default/default.css
+    - /js/nivo-slider/themes/light/light.css
+    - /js/nivo-slider/themes/dark/dark.css
+    - /js/nivo-slider/themes/bar/bar.css
+    - /js/nivo-slider/nivo-slider.css
+  javascripts:  [nivo-slider/jquery.nivo.slider.pack.js]

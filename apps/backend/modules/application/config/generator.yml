@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           application
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          application
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        fields:
+          created_at:
+            label: Date
+            date_format: m-d-y
+        title: Membership Applications
+        display: [created_at, first_name, last_name, member_type, email_address, program_year, status_name]
+        sort: [ created_at, desc ]  
+        actions: [ ]
+      filter:  
+        display: [ program_year_id, status, title, first_name, last_name, email_address ]
+      form:    ~
+      edit:    ~
+      new:     ~

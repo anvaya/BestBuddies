@@ -1,0 +1,371 @@
+Mar 25 22:44:33 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:44:33 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:44:33 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 22:44:33 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 22:44:33 symfony [err] {sfException} Call to undefined method myUser::isAnonymous.
+Mar 25 22:44:33 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 25 22:44:33 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:44:33 symfony [info] {sfWebDebugLogger} Configuration 1014.28 ms (8)
+Mar 25 22:44:33 symfony [info] {sfWebDebugLogger} Factories 217.17 ms (1)
+Mar 25 22:45:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:45:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:45:05 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 22:45:05 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 22:45:05 symfony [err] {Doctrine_Record_UnknownPropertyException} Unknown method myUser::isAnonymous
+Mar 25 22:45:05 symfony [err] {sfWebDebugLogger}  Error at C:\phplib\symfony\symfony-1.4.17\lib\debug\sfDebug.class.php on line 157 (Argument 1 passed to sfDebug::userAsArray() must be an instance of sfUser, instance of myUser given, called in C:\phplib\symfony\symfony-1.4.17\lib\exception\sfException.class.php on line 217 and defined)
+Mar 25 22:45:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:45:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:45:20 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 22:45:20 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 22:45:20 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:45:20 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 22:45:20 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:45:20 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 22:45:20 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 22:45:20 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 22:45:20 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 22:45:20 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:45:20 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:45:20 symfony [info] {sfWebDebugLogger} Configuration 50.94 ms (11)
+Mar 25 22:45:20 symfony [info] {sfWebDebugLogger} Factories 68.87 ms (1)
+Mar 25 22:45:20 symfony [info] {sfWebDebugLogger} Action "default/index" 0.30 ms (1)
+Mar 25 22:45:20 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 54.07 ms (1)
+Mar 25 22:45:20 symfony [info] {sfWebResponse} Send content (31314 o)
+Mar 25 22:46:34 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:46:34 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:46:34 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 22:46:34 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 22:46:34 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:46:34 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 22:46:34 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:46:34 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 22:46:34 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 22:46:34 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 22:46:34 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 22:46:34 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:46:34 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:46:34 symfony [err] {sfConfigurationException} The route "content" does not exist.
+Mar 25 22:46:34 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 25 22:46:34 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:46:34 symfony [info] {sfWebDebugLogger} Configuration 39.03 ms (10)
+Mar 25 22:46:34 symfony [info] {sfWebDebugLogger} Factories 73.96 ms (1)
+Mar 25 22:46:34 symfony [info] {sfWebDebugLogger} Action "default/index" 0.22 ms (1)
+Mar 25 22:46:34 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 185.43 ms (1)
+Mar 25 22:46:34 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 25 22:46:52 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:46:52 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:46:52 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 22:46:52 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 22:46:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:46:52 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 22:46:53 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:46:53 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 22:46:53 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 22:46:53 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 22:46:53 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 22:46:53 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:46:53 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:46:53 symfony [err] {sfConfigurationException} The route "resources" does not exist.
+Mar 25 22:46:53 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 25 22:46:53 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:46:53 symfony [info] {sfWebDebugLogger} Configuration 36.80 ms (10)
+Mar 25 22:46:53 symfony [info] {sfWebDebugLogger} Factories 70.96 ms (1)
+Mar 25 22:46:53 symfony [info] {sfWebDebugLogger} Action "default/index" 0.22 ms (1)
+Mar 25 22:46:53 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 151.64 ms (1)
+Mar 25 22:46:53 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 25 22:49:01 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:49:01 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:49:01 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 22:49:02 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 22:49:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:49:02 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 22:49:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:49:02 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 22:49:02 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 22:49:02 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 22:49:02 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 22:49:02 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:49:02 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:49:02 symfony [err] {sfConfigurationException} The route "resources" does not exist.
+Mar 25 22:49:02 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 25 22:49:02 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:49:02 symfony [info] {sfWebDebugLogger} Configuration 33.46 ms (10)
+Mar 25 22:49:02 symfony [info] {sfWebDebugLogger} Factories 65.52 ms (1)
+Mar 25 22:49:02 symfony [info] {sfWebDebugLogger} Action "default/index" 0.75 ms (1)
+Mar 25 22:49:02 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 168.27 ms (1)
+Mar 25 22:49:02 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 25 23:45:03 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 23:45:03 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 23:45:03 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 23:45:03 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 23:45:03 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 23:45:03 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 23:45:03 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 23:45:03 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 23:45:03 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 23:45:03 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:45:03 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:45:03 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 23:45:03 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 23:45:03 symfony [err] {sfConfigurationException} The route "member" does not exist.
+Mar 25 23:45:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 25 23:45:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 23:45:04 symfony [info] {sfWebDebugLogger} Configuration 140.66 ms (11)
+Mar 25 23:45:04 symfony [info] {sfWebDebugLogger} Factories 211.19 ms (1)
+Mar 25 23:45:04 symfony [info] {sfWebDebugLogger} Action "default/index" 0.22 ms (1)
+Mar 25 23:45:04 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 282.66 ms (1)
+Mar 25 23:45:04 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Mar 25 23:45:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 23:45:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 23:45:29 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 23:45:29 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 23:45:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 23:45:29 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 23:45:29 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 23:45:29 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 23:45:29 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 23:45:30 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:45:30 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:45:30 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 23:45:30 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 23:45:30 symfony [err] {sfConfigurationException} The route "content" does not exist.
+Mar 25 23:45:30 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 25 23:45:30 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 23:45:30 symfony [info] {sfWebDebugLogger} Configuration 37.56 ms (10)
+Mar 25 23:45:30 symfony [info] {sfWebDebugLogger} Factories 64.02 ms (1)
+Mar 25 23:45:30 symfony [info] {sfWebDebugLogger} Action "default/index" 0.22 ms (1)
+Mar 25 23:45:30 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 174.51 ms (1)
+Mar 25 23:45:30 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 25 23:47:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 23:47:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 23:47:05 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 23:47:05 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 23:47:05 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 23:47:05 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 23:47:05 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 23:47:05 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 23:47:05 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 23:47:05 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:47:05 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:47:05 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 23:47:05 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 23:47:05 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 23:47:05 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 23:47:05 symfony [info] {sfWebDebugLogger} Configuration 137.16 ms (11)
+Mar 25 23:47:05 symfony [info] {sfWebDebugLogger} Factories 174.45 ms (1)
+Mar 25 23:47:05 symfony [info] {sfWebDebugLogger} Action "default/index" 0.27 ms (1)
+Mar 25 23:47:05 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 96.93 ms (1)
+Mar 25 23:47:05 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.11 ms (2)
+Mar 25 23:47:05 symfony [info] {sfWebResponse} Send content (36873 o)
+Mar 25 23:47:31 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 23:47:31 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 23:47:31 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 23:47:31 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 23:47:31 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 23:47:31 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 23:47:31 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 23:47:31 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 23:47:31 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 23:47:31 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:47:31 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:47:31 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 23:47:31 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 23:47:31 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 23:47:31 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 23:47:31 symfony [info] {sfWebDebugLogger} Configuration 57.95 ms (11)
+Mar 25 23:47:31 symfony [info] {sfWebDebugLogger} Factories 80.56 ms (1)
+Mar 25 23:47:31 symfony [info] {sfWebDebugLogger} Action "default/index" 0.22 ms (1)
+Mar 25 23:47:31 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 119.19 ms (1)
+Mar 25 23:47:31 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 25 23:47:31 symfony [info] {sfWebResponse} Send content (37405 o)
+Mar 25 23:52:11 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 23:52:11 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 23:52:11 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 23:52:11 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 25 23:52:11 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 23:52:11 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 25 23:52:11 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 23:52:11 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 23:52:11 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 25 23:52:11 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:52:11 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 25 23:52:11 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 23:52:11 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 23:52:11 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 23:52:11 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 23:52:11 symfony [info] {sfWebDebugLogger} Configuration 28.01 ms (10)
+Mar 25 23:52:11 symfony [info] {sfWebDebugLogger} Factories 70.87 ms (1)
+Mar 25 23:52:11 symfony [info] {sfWebDebugLogger} Action "default/index" 0.24 ms (1)
+Mar 25 23:52:11 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 80.88 ms (1)
+Mar 25 23:52:11 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 25 23:52:11 symfony [info] {sfWebResponse} Send content (41779 o)
+Mar 26 00:00:48 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 26 00:00:48 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 26 00:00:48 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 26 00:00:48 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 26 00:00:48 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 26 00:00:48 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 26 00:00:48 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 26 00:00:48 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 26 00:00:48 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 26 00:00:48 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 26 00:00:48 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout.php"
+Mar 26 00:00:48 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 26 00:00:48 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 26 00:00:48 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 26 00:00:48 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 26 00:00:48 symfony [info] {sfWebDebugLogger} Configuration 34.24 ms (10)
+Mar 26 00:00:48 symfony [info] {sfWebDebugLogger} Factories 68.64 ms (1)
+Mar 26 00:00:48 symfony [info] {sfWebDebugLogger} Action "default/index" 0.22 ms (1)
+Mar 26 00:00:48 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 93.05 ms (1)
+Mar 26 00:00:48 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Mar 26 00:00:48 symfony [info] {sfWebResponse} Send content (41881 o)
+Mar 26 00:21:58 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 26 00:21:58 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 26 00:21:58 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 26 00:21:58 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 26 00:21:58 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 26 00:21:58 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 26 00:21:58 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 26 00:21:58 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 26 00:21:58 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 26 00:21:58 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:21:58 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:21:58 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 26 00:21:58 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 26 00:21:58 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 26 00:21:58 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 26 00:21:58 symfony [info] {sfWebDebugLogger} Configuration 74.19 ms (11)
+Mar 26 00:21:58 symfony [info] {sfWebDebugLogger} Factories 83.78 ms (1)
+Mar 26 00:21:58 symfony [info] {sfWebDebugLogger} Action "default/index" 0.24 ms (1)
+Mar 26 00:21:58 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 142.98 ms (1)
+Mar 26 00:21:58 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 26 00:21:58 symfony [info] {sfWebResponse} Send content (42851 o)
+Mar 26 00:22:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 26 00:22:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 26 00:22:29 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 26 00:22:29 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 26 00:22:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 26 00:22:29 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 26 00:22:29 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 26 00:22:29 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 26 00:22:29 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 26 00:22:29 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:22:29 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:22:30 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 26 00:22:30 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 26 00:22:30 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 26 00:22:30 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 26 00:22:30 symfony [info] {sfWebDebugLogger} Configuration 52.34 ms (10)
+Mar 26 00:22:30 symfony [info] {sfWebDebugLogger} Factories 112.85 ms (1)
+Mar 26 00:22:30 symfony [info] {sfWebDebugLogger} Action "default/index" 0.29 ms (1)
+Mar 26 00:22:30 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 104.25 ms (1)
+Mar 26 00:22:30 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 26 00:22:30 symfony [info] {sfWebResponse} Send content (42852 o)
+Mar 26 00:26:06 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 26 00:26:06 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 26 00:26:06 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 26 00:26:06 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 26 00:26:06 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 26 00:26:06 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 26 00:26:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 26 00:26:06 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 26 00:26:06 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 26 00:26:06 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:26:06 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:26:06 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 26 00:26:06 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 26 00:26:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 26 00:26:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 26 00:26:06 symfony [info] {sfWebDebugLogger} Configuration 94.72 ms (11)
+Mar 26 00:26:06 symfony [info] {sfWebDebugLogger} Factories 87.07 ms (1)
+Mar 26 00:26:06 symfony [info] {sfWebDebugLogger} Action "default/index" 0.22 ms (1)
+Mar 26 00:26:06 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 169.05 ms (1)
+Mar 26 00:26:06 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 26 00:26:06 symfony [info] {sfWebResponse} Send content (43457 o)
+Mar 26 00:26:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 26 00:26:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 26 00:26:29 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 26 00:26:29 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 26 00:26:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 26 00:26:29 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 26 00:26:29 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 26 00:26:29 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 26 00:26:29 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 26 00:26:29 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:26:29 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:26:29 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 26 00:26:29 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 26 00:26:29 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 26 00:26:29 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 26 00:26:29 symfony [info] {sfWebDebugLogger} Configuration 93.75 ms (11)
+Mar 26 00:26:29 symfony [info] {sfWebDebugLogger} Factories 96.40 ms (1)
+Mar 26 00:26:29 symfony [info] {sfWebDebugLogger} Action "default/index" 0.25 ms (1)
+Mar 26 00:26:29 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 187.30 ms (1)
+Mar 26 00:26:29 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 26 00:26:29 symfony [info] {sfWebResponse} Send content (43455 o)
+Mar 26 00:27:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 26 00:27:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 26 00:27:05 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 26 00:27:05 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 26 00:27:05 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 26 00:27:05 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 26 00:27:05 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 26 00:27:05 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 26 00:27:05 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 26 00:27:05 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:27:05 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:27:06 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 26 00:27:06 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 26 00:27:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 26 00:27:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 26 00:27:06 symfony [info] {sfWebDebugLogger} Configuration 101.65 ms (11)
+Mar 26 00:27:06 symfony [info] {sfWebDebugLogger} Factories 122.20 ms (1)
+Mar 26 00:27:06 symfony [info] {sfWebDebugLogger} Action "default/index" 0.23 ms (1)
+Mar 26 00:27:06 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 342.72 ms (1)
+Mar 26 00:27:06 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 26 00:27:06 symfony [info] {sfWebResponse} Send content (43486 o)
+Mar 26 00:27:27 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 26 00:27:27 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 26 00:27:27 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 26 00:27:27 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 26 00:27:27 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 26 00:27:27 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 26 00:27:27 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 26 00:27:27 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 26 00:27:27 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 26 00:27:27 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:27:27 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:27:27 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 26 00:27:27 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 26 00:27:27 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 26 00:27:27 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 26 00:27:27 symfony [info] {sfWebDebugLogger} Configuration 67.43 ms (11)
+Mar 26 00:27:27 symfony [info] {sfWebDebugLogger} Factories 78.71 ms (1)
+Mar 26 00:27:27 symfony [info] {sfWebDebugLogger} Action "default/index" 0.22 ms (1)
+Mar 26 00:27:27 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 128.00 ms (1)
+Mar 26 00:27:27 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 26 00:27:27 symfony [info] {sfWebResponse} Send content (43474 o)
+Mar 26 00:30:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 26 00:30:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 26 00:30:20 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 26 00:30:20 symfony [info] {myUser} Automatic user logout due to timeout
+Mar 26 00:30:20 symfony [info] {myUser} User is not authenticated
+Mar 26 00:30:20 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Mar 26 00:30:20 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 26 00:30:20 symfony [info] {sfFilterChain} Executing filter "MySecureFilter"
+Mar 26 00:30:20 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 26 00:30:20 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 26 00:30:20 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\modules/default/templates/indexSuccess.php"
+Mar 26 00:30:20 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:30:20 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\frontend\templates/layout_home.php"
+Mar 26 00:30:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 26 00:30:20 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 26 00:30:20 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 26 00:30:20 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 26 00:30:20 symfony [info] {sfWebDebugLogger} Configuration 30.00 ms (10)
+Mar 26 00:30:20 symfony [info] {sfWebDebugLogger} Factories 92.43 ms (1)
+Mar 26 00:30:20 symfony [info] {sfWebDebugLogger} Action "default/index" 0.25 ms (1)
+Mar 26 00:30:20 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 121.01 ms (1)
+Mar 26 00:30:20 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 26 00:30:20 symfony [info] {sfWebResponse} Send content (44113 o)

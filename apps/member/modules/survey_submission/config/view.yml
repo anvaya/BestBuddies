@@ -1,0 +1,10 @@
+## YAML Template.
+editSuccess:
+  layout: layout_main_content
+  stylesheets: [survey.css]
+completeSuccess:
+  layout: layout_main_content
+  stylesheets: [survey.css]
+duplicateSuccess:
+  layout: layout_main_content
+  stylesheets: [survey.css]  

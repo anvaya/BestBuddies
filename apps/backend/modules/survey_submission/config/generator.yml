@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           survey_submission
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          survey_submission
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        title: Survey Submissions
+        actions: [ ]
+        object_actions: 
+          _show:
+            action: show
+          _delete: ~ 
+        fields:
+          status_name: 
+            label: Status
+          sort: [ updated_at, desc ]
+          updated_at: 
+            label: Date
+        display: [ survey, status_name, member, updated_at ]
+      filter:  
+        display: [ survey_id, status, member_id, updated_at ]
+      form:    ~
+      edit:    ~
+      new:     ~

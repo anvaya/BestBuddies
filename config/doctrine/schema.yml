@@ -1,0 +1,383 @@
+country:
+  columns:
+    country_code: { type: varchar(6), notnull: true, primary: true, unique: true }
+    disabled: { type: boolean, notnull: true, default: 0 }
+
+question_category:
+  columns:
+    id: { type: integer, size: 2, unsigned: true, primary: true, notnull: true, autoincrement: true }    
+    category_name: { type: varchar(255), unique: true, notnull: true }
+    parent_category_id: { type: integer, size: 2, unsigned: true, notnull: false }
+  relations:
+    parent_category: { local: parent_category_id, onDelete: CASCADE }
+    
+program_year:
+  columns:
+    id: { type: integer, size: 2, unsigned: true, primary: true, notnull: true, autoincrement: true }    
+    type_name: { type: varchar(45), unique: true, notnull: true }
+    from_date: { type: date,  notnull: true }
+    to_date:   { type: date,  notnull: true }
+    is_active:    { type: boolean, notnull: true, default: 0 }
+    
+member_type:
+  columns:
+    id: { type: integer, size: 2, unsigned: true, primary: true, notnull: true, autoincrement: true }
+    type_name: { type: varchar(45), unique: true, notnull: true }
+    description: { type: varchar(255), notnull: false } 
+  
+
+    
+application:
+  actAs: {Timestampable: ~}
+  columns:
+    id:             { type: integer, size: 4, unsigned: true, primary: true, notnull: true, autoincrement: true }
+    member_type_id: { type: integer, size: 2, unsigned: true, notnull: false }
+    status:         { type: integer, size: 1, notnull: false }
+    title:          { type: varchar(6), notnull: false }
+    first_name:     { type: varchar(20), notnull: false }
+    last_name:      { type: varchar(20), notnull: false }
+    email_address:  { type: varchar(80), notnull: false }
+    submission_id:  { type: integer, size: 8, notnull: false }
+    program_year_id:   { type: integer, size: 2, notnull: false, unsigned: true }    
+  relations:
+    member_type: { local: member_type_id, onDelete: SET NULL, onUpdate: CASCADE }
+    program_year: { local: program_year_id, onDelete: SET NULL, onUpdate: CASCADE }
+    
+member:
+ inheritance:
+    type: column_aggregation
+    extends: sfGuardUser     
+    keyField: is_member
+    keyValue: 1
+ columns:
+   is_member:      { type: integer, size: 1, notnull: false }
+   member_type_id: { type: integer, size: 2, unsigned: true, notnull: false }
+   country:        { type: varchar(6), notnull: false } 
+   application_id: { type: integer, size: 4, notnull: false, unsigned: true  }
+   timezone:       { type: varchar(255), notnull: false }
+   culture:        { type: varchar(255), notnull: false }
+ relations:
+   member_type:    { local: member_type_id, onDelete: SET NULL, onUpdate: CASCADE }
+   application:    { local: application_id, onDelete: SET NULL, onUpdate: CASCADE }
+
+
+submission_form:
+  columns:
+    id:            { type: integer, size: 4, unsigned: true, primary: true, notnull: true, autoincrement: true }
+    form_code:     { type: varchar(40), notnull: false }
+    form_name:     { type: varchar(100), notnull: true }
+    disabled:      { type: boolean, notnull: true, default: 0 }
+    frequency:     { type: integer, size: 2, notnull: true, default: 0 }
+    send_reminder: { type: boolean, notnull: false }
+    form_description: { type: varchar(500), notnull: false }
+    template_name: { type: varchar(40), notnull: false }
+    
+question:
+  columns:
+    id:            { type: integer, size: 4, unsigned: true, primary: true, notnull: true, autoincrement: true }    
+    answer_type:   { type: integer, size: 1, unsigned: true, notnull: true }    
+    question_text: { type: varchar(400), notnull: true  }
+    help_message:  { type: varchar(400), notnull: false }    
+    parent_question_id: { type: integer, size: 4, unsigned: true, notnull: false }    
+    disabled:      { type: boolean, notnull: true, default: 0 }            
+  relations:
+    ParentQuestion: { class: question, local: parent_question_id, foreign: id, onDelete: SET NULL, onUpdate: CASCADE }
+
+form_question:
+  inheritance:
+    type: concrete
+    extends: question    
+  columns:
+    form_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    mandatory: { type: boolean, notnull: true, default: 0 }
+    group_code:  { type: varchar(20), notnull: false }
+    display_order: { type: integer, size: 2, notnull: false, unsigned: true }
+    css_class: { type: varchar(30), notnull: false }
+    page_num: { type: integer, size: 2, notnull: false }
+  relations:
+    submission_form: { local: form_id, foreign: id, onDelete: CASCADE, onUpdate: CASCADE }              
+    
+question_bank:
+  inheritance:
+    type: concrete
+    extends: question    
+  columns:
+    category_id: { type: integer, size: 2, notnull: false, unsigned: true }
+  relations:
+    ParentQuestion: { class: question_bank, local: parent_question_id, foreign: id, onDelete: SET NULL, onUpdate: CASCADE }
+    question_category: { local: category_id, onDelete: SET NULL }
+    
+question_option:
+  columns:
+    id:  { type: integer, size: 4, unsigned: true, primary: true, notnull: true, autoincrement: true }
+    question_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    option_value: { type: varchar(45), notnull: true }
+    option_text: { type: varchar(300), notnull: true }
+    pre_selected: { type: boolean, notnull: true, default: 0 }
+    display_order: { type: integer, size: 1, notnull: true, default: 0 }
+  relations:
+    question_bank: { local: question_id, onDelete: CASCADE, onUpdate: CASCADE }
+    
+formquestion_option:
+  columns:
+    id:  { type: integer, size: 4, unsigned: true, primary: true, notnull: true, autoincrement: true }
+    question_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    option_value: { type: varchar(45), notnull: true }
+    option_text: { type: varchar(300), notnull: true }
+    pre_selected: { type: boolean, notnull: true, default: 0 }
+    display_order: { type: integer, size: 1, notnull: true, default: 0 }
+  relations:
+    form_question: { local: question_id, onDelete: CASCADE, onUpdate: CASCADE }    
+    
+submission:
+  actAs: {Timestampable: ~}
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, primary: true, notnull: true, autoincrement: true }
+    form_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    user_id: { type: integer, notnull: false }
+    submission_ip: { type: integer, notnull: false }
+    archieved: { type: boolean, notnull: true, default: 0 }
+  relations:
+    sfGuardUser: { local: user_id, foreign: id, onDelete: SET NULL, onUpdate: CASCADE }
+    submission_form:  { local: form_id, onDelete: SET NULL, onUpdate: CASCADE }
+    
+submission_data:
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    submission_id: { type: integer, size: 8, unsigned: true, notnull: true }
+    question_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    answser_text: { type: varchar(2000), notnull: false }    
+    selected_options: { type: varchar(2000), notnull: false }
+    answer_files: { type: varchar(2000), notnull: false }
+  relations:
+    submission: { local: submission_id, foreign: id, onDelete: CASCADE, onUpdate: CASCADE }
+    form_question: { local: question_id, foreign: id, onDelete: SET NULL, onUpdate: CASCADE }
+    
+survey:
+  actAs: {Timestampable: ~}
+  columns:
+    id:  { type: integer, size: 4, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    user_id: { type: integer, notnull: false }
+    status: { type: integer, size: 1 }
+    title: { type: varchar(400), notnull: false }
+    start_date: { type: date, notnull: false }
+    end_date: { type: date, notnull: false }
+    template_name: { type: varchar(100), notnull: false }
+    css_file: { type: varchar(100), notnull: false }    
+  relations:
+    sfGuardUser: { local: user_id, foreign: id, onDelete: SET NULL, onUpdate: CASCADE }
+    surveyMemberTypes: { class: member_type, refClass: survey_membertype, local: survey_id, foreign: member_type_id }
+
+survey_membertype:
+  columns:
+    survey_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    member_type_id: { type: integer, size: 2, unsigned: true, notnull: false } 
+  relations:
+    survey: { onDelete: CASCADE, local: survey_id }
+    member_type: { onDelete: CASCADE, local: member_type_id }
+    
+survey_question:
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    survey_id:  { type: integer, size: 4, unsigned: true, notnull: false }
+    parent_question_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    question_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    mandatory: { type: boolean, notnull: true, default: 0 }
+    page_id: { type: integer, size: 1, notnull: false }
+    disabled: { type: boolean, notnull: true, default: 0 }
+    display_order:  { type: integer, size: 2, notnull: true, default: 0}
+  relations:
+    survey: { local: survey_id, onDelete: CASCADE }
+    question_bank: { local: question_id, onDelete: CASCADE }
+    parent_question: { class: question_bank, onDelete: SET NULL }
+
+survey_invitation:
+  columns:
+    id:  { type: integer, size: 4, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    survey_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    member_id: { type: integer, notnull: false }
+    email_address: { type: varchar(80), notnull: true }
+    sent: { type: boolean, notnull: true, default: 0 }
+  relations:
+    survey: { local: survey_id, onDelete: CASCADE }
+    member: { local: member_id, onDelete: CASCADE }
+    
+survey_submission:  
+  actAs: { Timestampable: ~ }
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    survey_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    status: { type: integer, size: 1, notnull: false, default: 0 }
+    member_id: { type: integer, notnull: false }
+    page_number: { type: integer, size: 2, unsigned: true }
+  relations:
+    survey: { local: survey_id, onDelete: CASCADE }
+    member: { local: member_id, onDelete: SET NULL }
+    
+survey_data:
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    submission_id: { type: integer, size: 8, unsigned: true, notnull: false }
+    survey_question_id: { type: integer, size: 8, unsigned: true, notnull: false }
+    question_bank_id: { type: integer, size: 8, unsigned: true, notnull: false }
+    answer_text: { type: varchar(2000), notnull: false }    
+    selected_options: { type: varchar(2000), notnull: false }
+  relations:
+    survey_submission: { local: submission_id, onDelete: CASCADE }
+    survey_question: { local: survey_question_id, onDelete: SET NULL }
+    question_bank: { local: question_bank_id, onDelete: SET NULL }
+   
+event_type:
+  columns:
+    id:  { type: integer, size: 4, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    type_name: { type: varchar(100), notnull: true, unique: true }
+    description: { type: varchar(400), notnull: false }
+  
+    
+calendar_event: 
+  actAs: { Timestampable: ~ }
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    member_id: { type: integer, notnull: false }
+    event_type_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    from_date: { type: timestamp, notnull: false }
+    to_date:  { type: timestamp, notnull: false }
+    title: { type: varchar(400), notnull: false }
+    description: { type: varchar(1000), notnull: false }
+    address: { type: varchar(400), notnull: false }
+    city: { type: varchar(100), notnull: false }
+    state: { type: varchar(50), notnull: false }
+    zip: { type: varchar(20), notnull: false }
+    contact_person: { type: varchar(60), notnull: false }
+    phone_number: { type: varchar(60), notnull: false }
+    email_address:  { type: varchar(100), notnull: false } 
+    website: { type: varchar(100), notnull: false }
+    status: { type: integer, size: 1, notnull: true, default: 0 }
+  relations:
+    event_type: { local: event_type_id, onDelete: SET NULL }
+    member: { local: member_id, onDelete: SET NULL }    
+
+event_member:
+  actAs: { Timestampable: ~ }
+  columns:
+    event_id: { type: integer, size: 8, unsigned: true, notnull: false, }
+    member_id: { type: integer, notnull: false }
+  relations:
+    calendar_event: { local: event_id, onDelete: CASCADE }
+    member: { local: member_id, onDelete: CASCADE }
+    
+event_file:
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    event_id: { type: integer, size: 8, unsigned: true, notnull: false, }
+    file_name: { type: varchar(200), notnull: true }
+    photo_title: { type: varchar(400), notnull: false }
+    display_order: { type: integer, size: 2, notnull: false }
+  relations:
+    calendar_event: { local: event_id, onDelete: CASCADE, onUpdate: CASCADE }
+    
+reminder:
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    member_id:  { type: integer, notnull: false }
+    submission_form_id: { type: integer, size: 4, unsigned: true, notnull: true }
+    start_date: { type: timestamp, notnull: true }
+    alert_type: { type: integer, size: 1, notnull: false, default: 0 }
+    show_onscreen:  { type: boolean, notnull: true, default: 0 }
+    send_email:  { type: boolean, notnull: true, default: 0 }     
+    displayed:  { type: boolean, notnull: true, default: 0 }
+    emailed:    { type: boolean, notnull: true, default: 0 }
+    alert_title: { type: varchar(255), notnull: false }
+    alert_content: { type: text, notnull: false }
+    record_id: { type: integer, size: 8, unsigned: true, notnull: false, }
+  relations:
+    members: { local: member_id, onDelete: CASCADE } 
+    submission_form: { local: submission_form_id, onDelete: CASCADE }
+
+tag: 
+  columns:
+    id:  { type: integer, size: 4, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    tag: { type: string(255) }   
+    
+blog:
+  actAs: 
+    Timestampable: ~
+    Sluggable:
+      fields: [title]
+      unique: true
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    title: { type: varchar(300), notnull: true }
+    author_id: { type: integer, notnull: false }
+    blog: { type: text, notnull: false }
+    image: { type: varchar(255), notnull: false }        
+    status: { type: integer, size: 1, notnull: true, default: 0 }
+    alert_on_comment: { type: boolean, notnull: true, default: 0 }
+  relations:
+    member:   { local: author_id, onDelete: SET NULL }    
+    
+blog_tag:
+  columns:
+    id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    blog_id: { type: integer, size: 8, unsigned: true, notnull: false }
+    tag_id:  { type: integer, size: 4, unsigned: true, notnull: false }
+  relations:
+    blog: { local: blog_id, onDelete: CASCADE }
+    tag:  { local: tag_id, onDelete: CASCADE }
+
+blog_comment:
+  actAs: 
+    Timestampable: ~    
+  columns:
+   id:  { type: integer, size: 8, unsigned: true, notnull: true, primary: true, autoincrement: true }
+   blog_id: { type: integer, size: 8, unsigned: true, notnull: true }
+   author_id: { type: integer, notnull: true }
+   comment_text: { type: text, notnull: false }
+   approved: { type: integer, size: 1, notnull: true, default: 0 }
+   parent_comment_id: { type: integer, size: 8, unsigned: true, notnull: false }
+  relations:
+    blog: { local: blog_id, onDelete: CASCADE }
+    member: { local: author_id, onDelete: CASCADE }    
+
+site_page:  
+  actAs: 
+    Sluggable:
+      fields: [title]
+      unique: true
+  columns:
+    id:  { type: integer, size: 4, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    title: { type: string, size: 255, notnull: true }
+    parent_page_id: { type: integer, size:  4, unsigned: true, notnull: false  }
+    page_content: { type: string, size: 50000, notnull: false }
+    meta_keywords: { type: string, size: 1000 }
+    meta_description: { type: string, size: 2000 }
+    status: { type: integer, size: 1, unsigned: true, default: 0 }
+    display_order: { type: integer, size: 4, unsigned: true }
+    template: { type: string, size: 50, notnull: false }
+    members_only: { type: boolean, notnull: false  }
+    admin_only: { type: boolean, notnull: false }
+  relations:
+    ParentPage: { class: site_page, local: parent_page_id, foreign: id, onDelete: SET NULL, onUpdate: CASCADE }
+
+resource:
+  columns:
+    id:  { type: integer, size: 4, unsigned: true, notnull: true, primary: true, autoincrement: true }
+    title: { type: string, size: 255, notnull: true }
+    resource_type: { type: string, size: 100, notnull: false }
+    members_only: { type: boolean, notnull: false  }
+    program_year_id: { type: integer, size: 2, unsigned: true, notnull: false  }
+    disabled: { type: boolean, notnull: false }
+    download_file_name: { type: string, size: 150, notnull: false }
+    file_name: { type: string, size: 150, notnull: false }
+  relations:
+    program_year: { local: program_year_id, onDelete: SET NULL, onUpdate: CASCADE }
+    resourceMemberTypes: { class: member_type, refClass: resource_membertype, local: resource_id, foreign: member_type_id }  
+
+resource_membertype:
+  columns:
+    resource_id: { type: integer, size: 4, unsigned: true, notnull: false }
+    member_type_id: { type: integer, size: 2, unsigned: true, notnull: false } 
+  relations:
+    resource: { onDelete: CASCADE, local: resource_id }
+    member_type: { onDelete: CASCADE, local: member_type_id }
+    

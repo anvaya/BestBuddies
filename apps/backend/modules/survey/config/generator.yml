@@ -1,0 +1,58 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           survey
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          survey
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        survey_member_types_list:
+            label: Member Types
+        css_file:
+          label: "CSS File"
+      list:    
+        title: Surveys
+        fields:
+          start_date: 
+            date_format: M/d/y
+          end_date:
+            date_format: M/d/y
+          status_name:
+            label: Status
+        display: [ title, status_name, start_date, end_date ]
+        sort: [ start_date, desc ]
+        object_actions:
+          _edit: ~
+          _delete: ~
+          clone: 
+            label: Clone
+            action: clone
+      filter:  
+        display: [ status, title, start_date, end_date, template_name, css_file, survey_member_types_list ]
+      form:    
+        fields:
+          title:
+            attributes:
+              size: 100          
+        display:
+          Survey: [ title, start_date, end_date, template_name, css_file, status ]
+          Questions: [ _questions ]
+          Applicable To: [ survey_member_types_list ]
+      edit:    
+        actions:
+          _delete: ~
+          _list: ~
+          _save: ~
+          _invite:
+            label: Send Invites
+            action: sendInvitations
+          
+      new:     ~

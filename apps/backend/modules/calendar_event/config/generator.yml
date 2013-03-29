@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           calendar_event
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          calendar_event
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        title: Events
+        display: [ event_type, title, from_date, to_date, city ]
+      filter:  
+        fields:
+          member_id: 
+            label: Created By
+        display: [ member_id, event_type_id, from_date, to_date, city, status ]
+      form:    
+        display:
+          Event: [ title, event_type_id, from_date, to_date, description, status ]
+          Location: [ address, city, state, zip ]
+          Contact:  [ contact_person, phone_number, email_address, website ]
+          
+      edit:    ~
+      new:     ~

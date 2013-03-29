@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           resource
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                Resources
+    route_prefix:          resource
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        resource_member_types_list:
+          label: For Member Types
+        download_file_name:
+          label: Download Name
+        file_name:
+          label: File
+      list:    
+        display: [ title, resource_type, members_only, program_year, disabled ]
+        title: Resources
+        sort: [title, asc]
+      filter:  
+        display: [ title, resource_type, members_only, program_year_id, disabled ]
+      form:    ~
+      edit:    
+        title: Edit Resource "%%title%%"
+      new:     ~

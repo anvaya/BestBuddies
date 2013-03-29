@@ -1,0 +1,8 @@
+## YAML Template.
+all:
+  layout: layout_main_content
+editSuccess:
+  javascripts: [ tinymce/tiny_mce_src.js ]
+newSuccess:  
+  javascripts: [ tinymce/tiny_mce_src.js ]    
+  

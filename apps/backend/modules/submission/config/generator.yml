@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           submission
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          submission
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        form_id:
+          label: Submission Type
+        created_at:
+          label: Date Submitted
+      list:    
+        title: Submissions
+        actions: []         
+        
+      filter:          
+        display: [ program_year, form_id, user_id, archieved, created_at ]
+      form:    ~
+      edit:    ~
+      new:     ~

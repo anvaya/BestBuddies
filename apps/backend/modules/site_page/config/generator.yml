@@ -1,0 +1,43 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           site_page
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          site_page
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        title:
+          label: Page Title          
+      list:    
+        title: Site Pages
+        display: [ title, slug, status_name, members_only, admin_only ]
+        sort: [ display_order, asc ]        
+      filter:  
+        display: [ title, slug, status, members_only, admin_only ]
+      form:
+        fields:
+          title:
+            attributes:
+              size: 100
+          meta_keywords:
+            attributes:
+              rows: 2
+              cols: 80
+          meta_description:
+            attributes:
+              cols: 80
+        display: 
+          Page: [ title, status, members_only, admin_only, display_order ]
+          SEO: [ meta_keywords, meta_description ]
+          Content: [ template, page_content ]          
+      edit:    
+        title: Edit Site Page "%%title%%"
+      new:     ~

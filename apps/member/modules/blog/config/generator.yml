@@ -1,0 +1,52 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           blog
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          blog
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        fields:
+          updated_at:
+            label: Last Modified
+            date_format: M-d-y
+          status_name:
+            label: Status
+        display: [ title, status_name, updated_at ]
+        sort: [ updated_at, desc ]
+        title: My Blogs
+      filter:  
+        fields:
+          created_at:
+            label: Created On
+          updated_at:
+            label: Last Modified On
+        display: [title, status, created_at, updated_at]
+      form:            
+        fields:         
+         title:
+           help: Title of your blog.
+           attributes:
+             size: 80
+         alert_on_comment:
+           label: Comment Alert
+           help: Send me an email alert when somebody posts a comment.
+         tags:
+           help: Keywords describing your blog. Separated by commas.
+           attributes:
+             rows: 2
+             cols: 60
+         image:
+           help: Optional. Upload a picture related to your blog.           
+      edit:    ~
+      new:     
+        title: Start a new Blog

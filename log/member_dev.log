@@ -1,0 +1,292 @@
+Mar 25 22:36:52 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:36:52 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:36:52 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 22:36:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:36:52 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:36:52 symfony [info] {sfBasicSecurityFilter} Action "default/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Mar 25 22:36:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:36:52 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:36:52 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Mar 25 22:36:52 symfony [info] {sfPHPView} Render "I:/Yog/Projects/Web/Juno/BestBuddies/wwwroot/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Mar 25 22:36:52 symfony [info] {sfPartialView} Render "I:/Yog/Projects/Web/Juno/BestBuddies/wwwroot/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Mar 25 22:36:52 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/layout_main_content.php"
+Mar 25 22:36:52 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/layout_main_content.php"
+Mar 25 22:36:52 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:36:52 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:36:52 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Mar 25 22:36:52 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:36:52 symfony [info] {sfWebDebugLogger} Configuration 957.26 ms (12)
+Mar 25 22:36:52 symfony [info] {sfWebDebugLogger} Factories 268.98 ms (1)
+Mar 25 22:36:52 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 14.78 ms (1)
+Mar 25 22:36:52 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 516.46 ms (1)
+Mar 25 22:36:52 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 7.04 ms (1)
+Mar 25 22:36:52 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 25 22:36:52 symfony [info] {sfWebResponse} Send content (42132 o)
+Mar 25 22:36:57 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:36:57 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:36:57 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/guard/login) for /guard/login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Mar 25 22:36:57 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:36:57 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:36:57 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Mar 25 22:36:57 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:36:57 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.username = ? AND b.is_active = ?) - (admin, 1)
+Mar 25 22:36:57 symfony [info] {myUser} User is authenticated
+Mar 25 22:36:57 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.name AS b__name, b.description AS b__description, b.created_at AS b__created_at, b.updated_at AS b__updated_at, b2.user_id AS b2__user_id, b2.permission_id AS b2__permission_id, b2.created_at AS b2__created_at, b2.updated_at AS b2__updated_at FROM bbd_sf_guard_permission b LEFT JOIN bbd_sf_guard_user_permission b2 ON b.id = b2.permission_id WHERE (b2.user_id IN (?)) - (1)
+Mar 25 22:36:57 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.name AS b__name, b.description AS b__description, b.created_at AS b__created_at, b.updated_at AS b__updated_at, b2.user_id AS b2__user_id, b2.group_id AS b2__group_id, b2.created_at AS b2__created_at, b2.updated_at AS b2__updated_at FROM bbd_sf_guard_group b LEFT JOIN bbd_sf_guard_user_group b2 ON b.id = b2.group_id WHERE (b2.user_id IN (?)) - (1)
+Mar 25 22:36:57 symfony [info] {myUser} Add credential(s) ""
+Mar 25 22:36:57 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE bbd_sf_guard_user SET last_login = ?, updated_at = ? WHERE id = ? - (2013-03-25 22:36:57, 2013-03-25 22:36:57, 1)
+Mar 25 22:36:57 symfony [info] {sfFrontWebController} Redirect to "http://bb.local/member_dev.php/"
+Mar 25 22:36:57 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Mar 25 22:36:57 symfony [info] {sfWebResponse} Send header "Location: http://bb.local/member_dev.php/"
+Mar 25 22:36:57 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:36:57 symfony [info] {sfWebDebugLogger} Configuration 26.21 ms (8)
+Mar 25 22:36:57 symfony [info] {sfWebDebugLogger} Factories 63.79 ms (1)
+Mar 25 22:36:57 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 702.87 ms (1)
+Mar 25 22:36:57 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.04 ms (5)
+Mar 25 22:36:57 symfony [info] {sfWebResponse} Send content (102 o)
+Mar 25 22:36:58 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:36:58 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:36:58 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Mar 25 22:36:58 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:36:58 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:36:58 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:36:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:36:58 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:36:58 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Mar 25 22:36:58 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/default/templates/indexSuccess.php"
+Mar 25 22:36:58 symfony [info] {main} Call "default->executeAlerts()"
+Mar 25 22:36:58 symfony [info] {sfPartialView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/default/templates/_alerts.php"
+Mar 25 22:36:58 symfony [info] {main} Call "default->executeEvents()"
+Mar 25 22:36:58 symfony [info] {sfPartialView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/default/templates/_events.php"
+Mar 25 22:36:58 symfony [info] {main} Call "default->executeBlogs()"
+Mar 25 22:36:58 symfony [info] {sfPartialView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/default/templates/_blogs.php"
+Mar 25 22:36:58 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/layout.php"
+Mar 25 22:36:58 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/layout.php"
+Mar 25 22:36:58 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:36:58 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:36:58 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Configuration 65.24 ms (16)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Factories 61.84 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (3)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Action "default/index" 0.61 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 129.39 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Component "default/alerts" 0.03 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Partial "default/_alerts" 1.96 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Component "default/events" 0.02 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Partial "default/_events" 2.09 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Component "default/blogs" 0.02 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebDebugLogger} Partial "default/_blogs" 2.63 ms (1)
+Mar 25 22:36:58 symfony [info] {sfWebResponse} Send content (46810 o)
+Mar 25 22:37:01 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:37:01 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:37:01 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',)
+Mar 25 22:37:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:37:02 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:37:02 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:37:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:37:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:37:02 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:37:02 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/calendar_event/templates/calendarSuccess.php"
+Mar 25 22:37:02 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:37:02 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:37:02 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:37:02 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:37:02 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:37:02 symfony [info] {sfWebDebugLogger} Configuration 720.92 ms (12)
+Mar 25 22:37:02 symfony [info] {sfWebDebugLogger} Factories 62.87 ms (1)
+Mar 25 22:37:02 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:37:02 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 5.12 ms (1)
+Mar 25 22:37:02 symfony [info] {sfWebDebugLogger} View "Success" for "calendar_event/calendar" 79.55 ms (1)
+Mar 25 22:37:02 symfony [info] {sfWebResponse} Send content (56735 o)
+Mar 25 22:37:03 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:37:03 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:37:03 symfony [info] {sfPatternRouting} Match route "calendar_event_collection" (/calendar_event/:action/action.:sf_format) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',  'sf_format' => 'html',)
+Mar 25 22:37:03 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:37:03 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:37:03 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:37:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:37:03 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:37:03 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:37:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.member_id AS b__member_id, b.event_type_id AS b__event_type_id, b.from_date AS b__from_date, b.to_date AS b__to_date, b.title AS b__title, b.description AS b__description, b.address AS b__address, b.city AS b__city, b.state AS b__state, b.zip AS b__zip, b.contact_person AS b__contact_person, b.phone_number AS b__phone_number, b.email_address AS b__email_address, b.website AS b__website, b.status AS b__status, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_calendar_event b WHERE (b.from_date >= ? AND b.to_date <= ? AND b.status <> ?) ORDER BY b.from_date asc - (2013-03-01 00:00:00, 2013-03-31 23:59:59, 3)
+Mar 25 22:37:03 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:37:03 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:37:03 symfony [info] {sfWebDebugLogger} Configuration 23.65 ms (10)
+Mar 25 22:37:03 symfony [info] {sfWebDebugLogger} Factories 59.42 ms (1)
+Mar 25 22:37:03 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:37:03 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 94.98 ms (1)
+Mar 25 22:37:03 symfony [info] {sfWebDebugLogger} View "None" for "calendar_event/calendar" 0.02 ms (1)
+Mar 25 22:37:03 symfony [info] {sfWebResponse} Send content (0 o)
+Mar 25 22:38:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:38:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:38:29 symfony [info] {sfPatternRouting} Match route "calendar_event_collection" (/calendar_event/:action/action.:sf_format) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',  'sf_format' => 'html',)
+Mar 25 22:38:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:38:29 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:38:29 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:38:29 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:38:29 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:38:29 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:38:29 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.member_id AS b__member_id, b.event_type_id AS b__event_type_id, b.from_date AS b__from_date, b.to_date AS b__to_date, b.title AS b__title, b.description AS b__description, b.address AS b__address, b.city AS b__city, b.state AS b__state, b.zip AS b__zip, b.contact_person AS b__contact_person, b.phone_number AS b__phone_number, b.email_address AS b__email_address, b.website AS b__website, b.status AS b__status, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_calendar_event b WHERE (b.from_date >= ? AND b.to_date <= ? AND b.status <> ?) ORDER BY b.from_date asc - (2013-03-25 00:00:00, 2013-03-31 23:59:59, 3)
+Mar 25 22:38:29 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:38:29 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:38:29 symfony [info] {sfWebDebugLogger} Configuration 24.27 ms (10)
+Mar 25 22:38:29 symfony [info] {sfWebDebugLogger} Factories 64.81 ms (1)
+Mar 25 22:38:29 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:38:29 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 25.15 ms (1)
+Mar 25 22:38:29 symfony [info] {sfWebDebugLogger} View "None" for "calendar_event/calendar" 0.02 ms (1)
+Mar 25 22:38:29 symfony [info] {sfWebResponse} Send content (0 o)
+Mar 25 22:38:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:38:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:38:30 symfony [info] {sfPatternRouting} Match route "calendar_event_collection" (/calendar_event/:action/action.:sf_format) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',  'sf_format' => 'html',)
+Mar 25 22:38:31 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:38:31 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:38:31 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:38:31 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:38:31 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:38:31 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:38:31 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.member_id AS b__member_id, b.event_type_id AS b__event_type_id, b.from_date AS b__from_date, b.to_date AS b__to_date, b.title AS b__title, b.description AS b__description, b.address AS b__address, b.city AS b__city, b.state AS b__state, b.zip AS b__zip, b.contact_person AS b__contact_person, b.phone_number AS b__phone_number, b.email_address AS b__email_address, b.website AS b__website, b.status AS b__status, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_calendar_event b WHERE (b.from_date >= ? AND b.to_date <= ? AND b.status <> ?) ORDER BY b.from_date asc - (2013-04-01 00:00:00, 2013-04-07 23:59:59, 3)
+Mar 25 22:38:31 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:38:31 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:38:31 symfony [info] {sfWebDebugLogger} Configuration 26.30 ms (10)
+Mar 25 22:38:31 symfony [info] {sfWebDebugLogger} Factories 65.93 ms (1)
+Mar 25 22:38:31 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:38:31 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 24.81 ms (1)
+Mar 25 22:38:31 symfony [info] {sfWebDebugLogger} View "None" for "calendar_event/calendar" 0.01 ms (1)
+Mar 25 22:38:31 symfony [info] {sfWebResponse} Send content (0 o)
+Mar 25 22:45:03 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:45:03 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:45:03 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',)
+Mar 25 22:45:03 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:45:03 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:45:03 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:45:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:45:03 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:45:03 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:45:04 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/calendar_event/templates/calendarSuccess.php"
+Mar 25 22:45:04 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:45:04 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:45:04 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:45:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:45:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} Configuration 44.10 ms (11)
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} Factories 68.36 ms (1)
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (3)
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 5.56 ms (1)
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} View "Success" for "calendar_event/calendar" 53.71 ms (1)
+Mar 25 22:45:04 symfony [info] {sfWebResponse} Send content (56767 o)
+Mar 25 22:45:04 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:45:04 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:45:04 symfony [info] {sfPatternRouting} Match route "calendar_event_collection" (/calendar_event/:action/action.:sf_format) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',  'sf_format' => 'html',)
+Mar 25 22:45:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:45:04 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:45:04 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:45:04 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:45:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:45:04 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:45:04 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.member_id AS b__member_id, b.event_type_id AS b__event_type_id, b.from_date AS b__from_date, b.to_date AS b__to_date, b.title AS b__title, b.description AS b__description, b.address AS b__address, b.city AS b__city, b.state AS b__state, b.zip AS b__zip, b.contact_person AS b__contact_person, b.phone_number AS b__phone_number, b.email_address AS b__email_address, b.website AS b__website, b.status AS b__status, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_calendar_event b WHERE (b.from_date >= ? AND b.to_date <= ? AND b.status <> ?) ORDER BY b.from_date asc - (2013-03-01 00:00:00, 2013-03-31 23:59:59, 3)
+Mar 25 22:45:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:45:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} Configuration 43.98 ms (10)
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} Factories 80.10 ms (1)
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 24.94 ms (1)
+Mar 25 22:45:04 symfony [info] {sfWebDebugLogger} View "None" for "calendar_event/calendar" 0.02 ms (1)
+Mar 25 22:45:04 symfony [info] {sfWebResponse} Send content (0 o)
+Mar 25 22:45:18 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:45:18 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:45:18 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',)
+Mar 25 22:45:18 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:45:18 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:45:18 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:45:18 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:45:18 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:45:18 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:45:18 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/calendar_event/templates/calendarSuccess.php"
+Mar 25 22:45:18 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:45:18 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:45:18 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:45:18 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:45:18 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:45:18 symfony [info] {sfWebDebugLogger} Configuration 45.00 ms (11)
+Mar 25 22:45:18 symfony [info] {sfWebDebugLogger} Factories 65.75 ms (1)
+Mar 25 22:45:18 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:45:18 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 6.16 ms (1)
+Mar 25 22:45:18 symfony [info] {sfWebDebugLogger} View "Success" for "calendar_event/calendar" 60.73 ms (1)
+Mar 25 22:45:18 symfony [info] {sfWebResponse} Send content (56767 o)
+Mar 25 22:46:32 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:46:32 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:46:32 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',)
+Mar 25 22:46:32 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:46:32 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:46:32 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:46:32 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:46:32 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:46:32 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:46:32 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/calendar_event/templates/calendarSuccess.php"
+Mar 25 22:46:32 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:46:32 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:46:32 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:46:32 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:46:32 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:46:32 symfony [info] {sfWebDebugLogger} Configuration 41.81 ms (11)
+Mar 25 22:46:32 symfony [info] {sfWebDebugLogger} Factories 63.11 ms (1)
+Mar 25 22:46:32 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:46:32 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 5.65 ms (1)
+Mar 25 22:46:32 symfony [info] {sfWebDebugLogger} View "Success" for "calendar_event/calendar" 51.47 ms (1)
+Mar 25 22:46:32 symfony [info] {sfWebResponse} Send content (56767 o)
+Mar 25 22:46:33 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:46:33 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:46:33 symfony [info] {sfPatternRouting} Match route "calendar_event_collection" (/calendar_event/:action/action.:sf_format) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',  'sf_format' => 'html',)
+Mar 25 22:46:33 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:46:33 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:46:33 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:46:33 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:46:33 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:46:33 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:46:33 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.member_id AS b__member_id, b.event_type_id AS b__event_type_id, b.from_date AS b__from_date, b.to_date AS b__to_date, b.title AS b__title, b.description AS b__description, b.address AS b__address, b.city AS b__city, b.state AS b__state, b.zip AS b__zip, b.contact_person AS b__contact_person, b.phone_number AS b__phone_number, b.email_address AS b__email_address, b.website AS b__website, b.status AS b__status, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_calendar_event b WHERE (b.from_date >= ? AND b.to_date <= ? AND b.status <> ?) ORDER BY b.from_date asc - (2013-03-01 00:00:00, 2013-03-31 23:59:59, 3)
+Mar 25 22:46:33 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:46:33 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:46:33 symfony [info] {sfWebDebugLogger} Configuration 43.69 ms (10)
+Mar 25 22:46:33 symfony [info] {sfWebDebugLogger} Factories 53.16 ms (1)
+Mar 25 22:46:33 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:46:33 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 26.54 ms (1)
+Mar 25 22:46:33 symfony [info] {sfWebDebugLogger} View "None" for "calendar_event/calendar" 0.02 ms (1)
+Mar 25 22:46:33 symfony [info] {sfWebResponse} Send content (0 o)
+Mar 25 22:46:50 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:46:50 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:46:50 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',)
+Mar 25 22:46:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:46:50 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:46:51 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:46:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:46:51 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:46:51 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:46:51 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\modules/calendar_event/templates/calendarSuccess.php"
+Mar 25 22:46:51 symfony [info] {sfPHPView} Decorate content with "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:46:51 symfony [info] {sfPHPView} Render "I:\Yog\Projects\Web\Juno\BestBuddies\wwwroot\apps\member\templates/calendar.php"
+Mar 25 22:46:51 symfony [info] {Doctrine_Connection_Mysql} query : SELECT b.id AS b__id, b.title AS b__title, b.resource_type AS b__resource_type, b.members_only AS b__members_only, b.program_year_id AS b__program_year_id, b.disabled AS b__disabled, b.download_file_name AS b__download_file_name, b.file_name AS b__file_name FROM bbd_resource b - ()
+Mar 25 22:46:51 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:46:51 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} Configuration 42.43 ms (11)
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} Factories 64.10 ms (1)
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 5.35 ms (1)
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} View "Success" for "calendar_event/calendar" 52.09 ms (1)
+Mar 25 22:46:51 symfony [info] {sfWebResponse} Send content (56767 o)
+Mar 25 22:46:51 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Mar 25 22:46:51 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Mar 25 22:46:51 symfony [info] {sfPatternRouting} Match route "calendar_event_collection" (/calendar_event/:action/action.:sf_format) for /calendar_event/calendar/action with parameters array (  'module' => 'calendar_event',  'action' => 'calendar',  'sf_format' => 'html',)
+Mar 25 22:46:51 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 25 22:46:51 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Mar 25 22:46:51 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 25 22:46:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.first_name AS b__first_name, b.last_name AS b__last_name, b.email_address AS b__email_address, b.username AS b__username, b.algorithm AS b__algorithm, b.salt AS b__salt, b.password AS b__password, b.is_active AS b__is_active, b.is_super_admin AS b__is_super_admin, b.last_login AS b__last_login, b.is_member AS b__is_member, b.member_type_id AS b__member_type_id, b.country AS b__country, b.application_id AS b__application_id, b.timezone AS b__timezone, b.culture AS b__culture, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_sf_guard_user b WHERE (b.id = ?) LIMIT 1 - (1)
+Mar 25 22:46:51 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 25 22:46:51 symfony [info] {calendar_eventActions} Call "calendar_eventActions->executeCalendar()"
+Mar 25 22:46:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.member_id AS b__member_id, b.event_type_id AS b__event_type_id, b.from_date AS b__from_date, b.to_date AS b__to_date, b.title AS b__title, b.description AS b__description, b.address AS b__address, b.city AS b__city, b.state AS b__state, b.zip AS b__zip, b.contact_person AS b__contact_person, b.phone_number AS b__phone_number, b.email_address AS b__email_address, b.website AS b__website, b.status AS b__status, b.created_at AS b__created_at, b.updated_at AS b__updated_at FROM bbd_calendar_event b WHERE (b.from_date >= ? AND b.to_date <= ? AND b.status <> ?) ORDER BY b.from_date asc - (2013-03-01 00:00:00, 2013-03-31 23:59:59, 3)
+Mar 25 22:46:51 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 25 22:46:51 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} Configuration 33.25 ms (10)
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} Factories 54.19 ms (1)
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} Action "calendar_event/calendar" 23.23 ms (1)
+Mar 25 22:46:51 symfony [info] {sfWebDebugLogger} View "None" for "calendar_event/calendar" 0.01 ms (1)
+Mar 25 22:46:51 symfony [info] {sfWebResponse} Send content (0 o)
